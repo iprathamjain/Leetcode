@@ -15,15 +15,6 @@ public:
                     int b = arr[i]/arr[j];
                     
                     umap_[curr] += umap_[a]*umap_[b];
-                    // if (a > b) {
-                    //     break;
-                    // }
-                    // else if (a == b) {
-                    //     umap_[curr] += umap_[a]*umap_[a];
-                    // }
-                    // else if (umap_.count(b)) {
-                    //     umap_[curr] += 2*umap_[a]*umap_[b];
-                    // }
                 }
             }
             total = (total + umap_[curr])%MOD;
