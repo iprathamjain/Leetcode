@@ -79,9 +79,9 @@ public:
             inde[coll[i]].second = i;
         }
         
-        for(int i=1;i<=k;i++){
-            if(inde[i].first==-1 || inde[i].second==-1) return {};
-        }
+        // for(int i=1;i<=k;i++){
+        //     if(inde[i].first==-1 || inde[i].second==-1) return {};
+        // }
         
         vector<vector<int>> mat(k,vector<int>(k,0));
         
