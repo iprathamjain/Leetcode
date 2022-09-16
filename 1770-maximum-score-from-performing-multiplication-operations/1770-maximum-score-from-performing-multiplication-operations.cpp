@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int dp[1005][1005];
+    vector<vector<int>>dp;
     int y, t;
     int f(int i, int x, vector<int>& nums, vector<int>& mul){
         
@@ -9,7 +9,7 @@ public:
         // if(i>j)
         //     return 0;
         
-        if(dp[i][x]!=INT_MAX)
+        if(dp[i][x]!=1e9)
             return dp[i][x];
 
         int front = nums[i]*mul[x] + f(i+1,x+1,nums,mul);
@@ -21,7 +21,7 @@ public:
     int maximumScore(vector<int>& nums, vector<int>& mul) {
         y = mul.size();
         t = nums.size();
-        fill((int*)dp,(int*)dp+sizeof(dp)/sizeof(int), INT_MAX);
+        dp.resize(1001,vector<int>(1001,1e9));
         return f(0,0,nums,mul);
     }
 };
